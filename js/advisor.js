@@ -7,6 +7,7 @@ class Asesor extends Personaje {
     super(nombreAsesor, familiaAsesor, edadAsesor);
     if (personajeAsesorado instanceof Personaje) {
       this.asesorado = personajeAsesorado;
+      this.emoji = "🎓";
     }
   }
 
