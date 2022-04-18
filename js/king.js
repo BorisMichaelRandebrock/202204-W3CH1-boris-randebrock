@@ -6,6 +6,7 @@ class Rey extends Personaje {
   constructor(nombreRey, familiaRey, edadRey, anyosReinadoRey) {
     super(nombreRey, familiaRey, edadRey);
     this.anyosReinado = anyosReinadoRey;
+    this.emoji = "👑";
   }
 
   comunicar() {

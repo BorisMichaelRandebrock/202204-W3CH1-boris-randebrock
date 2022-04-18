@@ -15,6 +15,7 @@ class Luchador extends Personaje {
     super(nombreLuchador, familiaLuchador, edadLuchador);
     this.arma = armaLuchador;
     this.destreza = this.filtraDestreza(valorDestreza);
+    this.emoji = "🗡";
   }
 
   filtraDestreza(valorDestreza) {

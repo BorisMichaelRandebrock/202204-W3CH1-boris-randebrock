@@ -17,6 +17,7 @@ class Escudero extends Personaje {
     this.pelotismo = this.filtrarPelotismo(valorPelotismo);
     if (personajeSirve instanceof Luchador) {
       this.sirveA = personajeSirve;
+      this.emoji = "🛡";
     }
   }
 
