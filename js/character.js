@@ -9,10 +9,15 @@ class Personaje {
 
   serie = "Juego de Tronos";
 
-  constructor(nombrePersonaje, familiaPersonaje, edadPersonaje) {
+  constructor(nombrePersonaje, familiaPersonaje, edadPersonaje, element) {
     this.nombre = nombrePersonaje;
     this.familia = familiaPersonaje;
     this.edad = edadPersonaje;
+    this.element = document.createElement(element);
+  }
+
+  render() {
+    this.element.innerHTML;
   }
 
   comunicar() {
