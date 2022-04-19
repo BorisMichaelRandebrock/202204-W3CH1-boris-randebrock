@@ -16,10 +16,6 @@ class Personaje {
     this.element = document.createElement(element);
   }
 
-  render() {
-    this.element.innerHTML;
-  }
-
   comunicar() {
     return `${this.nombre} dice: `;
   }
