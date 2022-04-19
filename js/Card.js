@@ -1,10 +1,16 @@
-class Card {
-  element;
+import Component from "./Component.js";
 
-  constructor(className) {
-    this.element = document.createElement("li");
-    this.element.className = className;
-    this.element.innnerHTML = ` <li class="character col">
+class Card extends Component {
+  constructor(character, parent, className) {
+    super(parent, "li", className);
+    // this.element = document.createElement("li");
+    // this.element.className = className;
+    this.render();
+    this.character = character;
+  }
+
+  render() {
+    this.element.innerHTML = `
           <div class="card character__card">
             <img
               src="img/no-one.jpg"
@@ -40,24 +46,8 @@ class Card {
             </div>
             <i class="emoji"></i>
           </div>
-        </li>
+       
       `;
-
-    // this.particularOne = particularOne;
-    // this.particularTwo = particularTwo;
-    // this.particularThree = particularThree;
-    // this.comunica();
-    // this.muere();
-    // this.yearsOfReign = yearsOfReign;
-    // this.arma = arma;
-    // this.destreza = destreza;
-    // this.peloteo = peloteo;
-    // this.advisorTo = adviserTo;
-    // this.sirvesTo = sirveTo;
   }
-
-  // comunica = () => {};
-
-  // muere = () => {};
 }
 export default Card;
