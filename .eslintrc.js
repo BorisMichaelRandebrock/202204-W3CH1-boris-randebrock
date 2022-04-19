@@ -13,5 +13,10 @@ module.exports = {
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
     "import/extensions": "off",
+    "lines-between-class-members": [
+      "error",
+      "always",
+      { exceptAfterSingleLine: true },
+    ],
   },
 };
