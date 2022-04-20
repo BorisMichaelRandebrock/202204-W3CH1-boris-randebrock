@@ -1,27 +1,28 @@
 import Component from "./Component.js";
+// import Personaje from "./character.js";
 
 class Card extends Component {
   constructor(character, parent, className) {
     super(parent, "li", className);
     // this.element = document.createElement("li");
     // this.element.className = className;
-    this.render();
+    this.render(character);
     this.character = character;
   }
 
-  render() {
+  render(character) {
     this.element.innerHTML = `
           <div class="card character__card">
             <img
-              src="img/no-one.jpg"
+              src="img/${character.nombre}.jpg"
               alt="Nombre y familia del personaje"
               class="character__picture card-img-top"
             />
             <div class="card-body">
-              <h2 class="character__name card-title h4">Nombre y familia</h2>
+              <h2 class="character__name card-title h4">${character.nombre} <br>${character.familia} </h2>
               <div class="character__info">
                 <ul class="list-unstyled">
-                  <li>Edad: X años</li>
+                  <li>Edad: ${character.edad}</li>
                   <li>
                     Estado:
                     <i class="fas fa-thumbs-down"></i>
@@ -31,7 +32,7 @@ class Card extends Component {
               </div>
               <div class="character__overlay">
                 <ul class="list-unstyled">
-                  <li>Años de reinado: X</li>
+                  <li>Años de reinado: Xx</li>
                   <li>Arma: XXX</li>
                   <li>Destreza: X</li>
                   <li>Peloteo: X</li>
