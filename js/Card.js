@@ -4,8 +4,6 @@ import Component from "./Component.js";
 class Card extends Component {
   constructor(character, parent, className) {
     super(parent, "li", className);
-    // this.element = document.createElement("li");
-    // this.element.className = className;
     this.render(character);
     this.character = character;
   }
@@ -25,37 +23,60 @@ class Card extends Component {
               <div class="character__info">
                 <ul class="list-unstyled">
                   <li>Edad: ${character.edad}</li>
-                  <li>
-                    Estado:
-                    <i class="fas fa-thumbs-down"></i>
-                    <i class="fas fa-thumbs-up"></i>
-                  </li>
+                 <li class="list__status">
+            Estado:
+            ${
+              character.vivo
+                ? '<i class="fas fa-thumbs-up"></i>'
+                : '<i class="fas fa-thumbs-down"></i>'
+            }
+          </li>
                 </ul>
               </div>
               <div class="character__overlay">
                 <ul class="list-unstyled">
-                  <li>Años de reinado: Xx</li>
-                  <li>Arma: XXX</li>
-                  <li>Destreza: X</li>
-                  <li>Peloteo: X</li>
-                  <li>Asesora a: X</li>
-                  <li>Sirve a: X</li>
+                    ${
+                      character.constructor.name === "Rey"
+                        ? `<li>Años de reinado: ${character.anyosReinado}</li>`
+                        : ""
+                    }
+                    ${
+                      character.constructor.name === "Luchador"
+                        ? `<li>Arma: ${character.arma}</li>
+                          <li>Destreza: ${character.destreza}</li>`
+                        : ""
+                    }
+                    ${
+                      character.constructor.name === "Asesor"
+                        ? `<li>Asesora a: ${character.asesorado.nombre}</li>`
+                        : ""
+                    }
+                    ${
+                      character.constructor.name === "Escudero"
+                        ? `<li>Peloteo: ${character.pelotismo}</li>
+                        <li>Sirve a: ${character.sirveA.nombre}</li>`
+                        : ""
+                    }
                 </ul>
-                <div class="character__actions">
-                  <button class="character__action btn">habla</button>
-                  <button class="character__action btn">muere</button>
-                </div>
+                  <div class="character__actions">
+          <button class="character__action btn ${
+            character.nombre
+          }-talk-button">habla</button>
+          <button class="character__action btn ${
+            character.nombre
+          }-death-button">muere</button>
+        </div>
               </div>
             </div>
               <i class="emoji">${
                 character.constructor.name === "Rey" ? "👑" : ""
               }
-    ${character.constructor.name === "Luchador" ? "🗡" : ""}
-    ${character.constructor.name === "Asesor" ? "🎓" : ""}
-    ${character.constructor.name === "Escudero" ? "🛡" : ""}</i>
+              ${character.constructor.name === "Luchador" ? "🗡" : ""}
+              ${character.constructor.name === "Asesor" ? "🎓" : ""}
+              ${character.constructor.name === "Escudero" ? "🛡" : ""}</i>
           </div>
-       
       `;
   }
 }
+
 export default Card;
