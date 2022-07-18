@@ -19,7 +19,9 @@ class Card extends Component {
               class="character__picture card-img-top"
             />
             <div class="card-body">
-              <h2 class="character__name card-title h4">${character.nombre} <br>${character.familia} </h2>
+              <h2 class="character__name card-title h4">${
+                character.nombre
+              } <br>${character.familia} </h2>
               <div class="character__info">
                 <ul class="list-unstyled">
                   <li>Edad: ${character.edad}</li>
@@ -45,7 +47,12 @@ class Card extends Component {
                 </div>
               </div>
             </div>
-            <i class="emoji"></i>
+              <i class="emoji">${
+                character.constructor.name === "Rey" ? "👑" : ""
+              }
+    ${character.constructor.name === "Luchador" ? "🗡" : ""}
+    ${character.constructor.name === "Asesor" ? "🎓" : ""}
+    ${character.constructor.name === "Escudero" ? "🛡" : ""}</i>
           </div>
        
       `;
