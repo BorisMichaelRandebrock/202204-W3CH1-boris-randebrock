@@ -1,5 +1,5 @@
 import Card from "./Card.js";
-import gotCharacters from "./got.js";
+import gotCharacters from "./Gxot.js";
 
 const parent = document.querySelector(".characters-list.row.list-unstyled");
 gotCharacters.forEach(
