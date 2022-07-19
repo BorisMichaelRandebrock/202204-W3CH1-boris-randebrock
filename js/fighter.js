@@ -2,7 +2,6 @@ import Personaje from "./character.js";
 
 class Luchador extends Personaje {
   arma;
-
   destreza;
 
   constructor(
