@@ -1,5 +1,5 @@
-import Personaje from "./Cxharacter.js";
-import Luchador from "./Fxighter.js";
+import Personaje from "./Character.js";
+import Luchador from "./Fighter.js";
 
 class Escudero extends Personaje {
   sirveA;

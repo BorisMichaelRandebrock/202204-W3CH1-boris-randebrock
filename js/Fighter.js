@@ -1,4 +1,4 @@
-import Personaje from "./Cxharacter.js";
+import Personaje from "./Character.js";
 
 class Luchador extends Personaje {
   arma;
